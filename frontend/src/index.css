@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cream text-ink font-body antialiased;
+}
+
+h1, h2, h3, h4 {
+  @apply font-display;
+}
+
+::selection {
+  background: #D2C4FF;
+}
+
+/* visible keyboard focus ring everywhere */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid #7C5CFF;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+.btn-primary {
+  @apply bg-cta text-white font-semibold px-5 py-2.5 rounded-xl shadow-glow transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+}
+
+.btn-secondary {
+  @apply bg-white text-ink font-semibold px-5 py-2.5 rounded-xl border border-violet-100 transition-colors duration-200 hover:border-violet-400 hover:bg-violet-50;
+}
+
+.input-field {
+  @apply w-full px-4 py-2.5 rounded-xl border border-violet-100 bg-white focus:border-violet-400 outline-none transition-colors text-ink placeholder:text-ink/40;
+}
+
+.card {
+  @apply bg-white rounded-2xl border border-violet-100/70 shadow-card transition-all duration-300;
+}
